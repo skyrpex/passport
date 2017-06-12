@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Zend\Diactoros\Response as Psr7Response;
 use League\OAuth2\Server\AuthorizationServer;
 
-class ApproveAuthorizationController
+class ApproveAuthorizationController extends BaseController
 {
     use HandlesOAuthErrors, RetrievesAuthRequestFromSession;
 

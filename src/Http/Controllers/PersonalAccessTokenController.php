@@ -9,7 +9,7 @@ use Laravel\Passport\TokenRepository;
 use Laravel\Passport\PersonalAccessTokenResult;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
-class PersonalAccessTokenController
+class PersonalAccessTokenController extends BaseController
 {
     /**
      * The token repository implementation.

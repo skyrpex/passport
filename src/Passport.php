@@ -76,13 +76,6 @@ class Passport
     public static $keyPath;
 
     /**
-     * Indicates if Passport migrations will be run.
-     *
-     * @var bool
-     */
-    public static $runsMigrations = true;
-
-    /**
      * Enable the implicit grant type.
      *
      * @return static
@@ -319,17 +312,5 @@ class Passport
         return static::$keyPath
             ? rtrim(static::$keyPath, "/\\").DIRECTORY_SEPARATOR.$file
             : storage_path($file);
-    }
-
-    /**
-     * Configure Passport to not register its migrations.
-     *
-     * @return static
-     */
-    public static function ignoreMigrations()
-    {
-        static::$runsMigrations = false;
-
-        return new static;
     }
 }

@@ -14,7 +14,7 @@ use League\OAuth2\Server\AuthorizationServer;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use League\OAuth2\Server\RequestTypes\AuthorizationRequest;
 
-class AuthorizationController
+class AuthorizationController extends BaseController
 {
     use HandlesOAuthErrors;
 

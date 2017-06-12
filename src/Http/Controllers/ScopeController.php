@@ -4,7 +4,7 @@ namespace Laravel\Passport\Http\Controllers;
 
 use Laravel\Passport\Passport;
 
-class ScopeController
+class ScopeController extends BaseController
 {
     /**
      * Get all of the available scopes for the application.

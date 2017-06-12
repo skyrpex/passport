@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Laravel\Passport\TokenRepository;
 
-class AuthorizedAccessTokenController
+class AuthorizedAccessTokenController extends BaseController
 {
     /**
      * The token repository implementation.

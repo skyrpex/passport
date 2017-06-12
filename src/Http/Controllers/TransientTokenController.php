@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Laravel\Passport\ApiTokenCookieFactory;
 
-class TransientTokenController
+class TransientTokenController extends BaseController
 {
     /**
      * The cookie factory instance.

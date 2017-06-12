@@ -5,7 +5,7 @@ namespace Laravel\Passport\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Routing\ResponseFactory;
 
-class DenyAuthorizationController
+class DenyAuthorizationController extends BaseController
 {
     use RetrievesAuthRequestFromSession;
 

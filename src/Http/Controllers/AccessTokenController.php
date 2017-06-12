@@ -8,7 +8,7 @@ use Zend\Diactoros\Response as Psr7Response;
 use Psr\Http\Message\ServerRequestInterface;
 use League\OAuth2\Server\AuthorizationServer;
 
-class AccessTokenController
+class AccessTokenController extends BaseController
 {
     use HandlesOAuthErrors;
 

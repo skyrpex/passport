@@ -38,7 +38,7 @@ class CheckClientCredentials
      *
      * @throws \Illuminate\Auth\AuthenticationException
      */
-    public function handle($request, Closure $next, ...$scopes)
+    public function handle($request, Closure $next)
     {
         $psr = (new DiactorosFactory)->createRequest($request);
 
@@ -48,6 +48,7 @@ class CheckClientCredentials
             throw new AuthenticationException;
         }
 
+        $scopes = array_slice(func_get_args(), 2);
         $this->validateScopes($psr, $scopes);
 
         return $next($request);

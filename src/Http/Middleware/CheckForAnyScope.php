@@ -15,12 +15,13 @@ class CheckForAnyScope
      * @param  array  $scopes
      * @return \Illuminate\Http\Response
      */
-    public function handle($request, $next, ...$scopes)
+    public function handle($request, $next)
     {
         if (! $request->user() || ! $request->user()->token()) {
             throw new AuthenticationException;
         }
 
+        $scopes = array_slice(func_get_args(), 2);
         foreach ($scopes as $scope) {
             if ($request->user()->tokenCan($scope)) {
                 return $next($request);
