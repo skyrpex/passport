@@ -5,11 +5,12 @@ namespace Laravel\Passport\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Laravel\Passport\Passport;
+use Illuminate\Routing\Controller;
 use Laravel\Passport\TokenRepository;
 use Laravel\Passport\PersonalAccessTokenResult;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
-class PersonalAccessTokenController extends BaseController
+class PersonalAccessTokenController extends Controller
 {
     /**
      * The token repository implementation.

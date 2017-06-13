@@ -3,10 +3,11 @@
 namespace Laravel\Passport\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Zend\Diactoros\Response as Psr7Response;
 use League\OAuth2\Server\AuthorizationServer;
 
-class ApproveAuthorizationController extends BaseController
+class ApproveAuthorizationController extends Controller
 {
     use HandlesOAuthErrors, RetrievesAuthRequestFromSession;
 

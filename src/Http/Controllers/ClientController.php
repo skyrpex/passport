@@ -4,10 +4,11 @@ namespace Laravel\Passport\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Controller;
 use Laravel\Passport\ClientRepository;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
-class ClientController extends BaseController
+class ClientController extends Controller
 {
     /**
      * The client repository instance.

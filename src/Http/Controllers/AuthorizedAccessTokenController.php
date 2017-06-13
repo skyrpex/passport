@@ -4,9 +4,10 @@ namespace Laravel\Passport\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Controller;
 use Laravel\Passport\TokenRepository;
 
-class AuthorizedAccessTokenController extends BaseController
+class AuthorizedAccessTokenController extends Controller
 {
     /**
      * The token repository implementation.

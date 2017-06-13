@@ -5,6 +5,7 @@ namespace Laravel\Passport\Http\Controllers;
 use Illuminate\Http\Request;
 use Laravel\Passport\Passport;
 use Laravel\Passport\Bridge\User;
+use Illuminate\Routing\Controller;
 use Laravel\Passport\TokenRepository;
 use Laravel\Passport\ClientRepository;
 use Illuminate\Database\Eloquent\Model;
@@ -14,7 +15,7 @@ use League\OAuth2\Server\AuthorizationServer;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use League\OAuth2\Server\RequestTypes\AuthorizationRequest;
 
-class AuthorizationController extends BaseController
+class AuthorizationController extends Controller
 {
     use HandlesOAuthErrors;
 

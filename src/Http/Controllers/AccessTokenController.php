@@ -2,13 +2,14 @@
 
 namespace Laravel\Passport\Http\Controllers;
 
+use Illuminate\Routing\Controller;
 use Laravel\Passport\TokenRepository;
 use Lcobucci\JWT\Parser as JwtParser;
 use Zend\Diactoros\Response as Psr7Response;
 use Psr\Http\Message\ServerRequestInterface;
 use League\OAuth2\Server\AuthorizationServer;
 
-class AccessTokenController extends BaseController
+class AccessTokenController extends Controller
 {
     use HandlesOAuthErrors;
 
