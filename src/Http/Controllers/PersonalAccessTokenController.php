@@ -8,10 +8,13 @@ use Laravel\Passport\Passport;
 use Illuminate\Routing\Controller;
 use Laravel\Passport\TokenRepository;
 use Laravel\Passport\PersonalAccessTokenResult;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
 class PersonalAccessTokenController extends Controller
 {
+    use ValidatesRequests;
+
     /**
      * The token repository implementation.
      *
@@ -62,10 +65,10 @@ class PersonalAccessTokenController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validation->make($request->all(), [
+        $this->validate($request, [
             'name' => 'required|max:255',
             'scopes' => 'array|in:'.implode(',', Passport::scopeIds()),
-        ])->validate();
+        ]);
 
         return $request->user()->createToken(
             $request->name, $request->scopes ?: []

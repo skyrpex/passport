@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Laravel\Passport\ClientRepository;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
 class ClientController extends Controller
 {
+    use ValidatesRequests;
+
     /**
      * The client repository instance.
      *
@@ -59,10 +62,10 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validation->make($request->all(), [
+        $this->validate($request, [
             'name' => 'required|max:255',
             'redirect' => 'required|url',
-        ])->validate();
+        ]);
 
         return $this->clients->create(
             $request->user()->getKey(), $request->name, $request->redirect
@@ -84,10 +87,10 @@ class ClientController extends Controller
             return new Response('', 404);
         }
 
-        $this->validation->make($request->all(), [
+        $this->validate($request, [
             'name' => 'required|max:255',
             'redirect' => 'required|url',
-        ])->validate();
+        ]);
 
         return $this->clients->update(
             $client, $request->name, $request->redirect
